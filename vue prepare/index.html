@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>vue-test</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- {{}} -->
+      <p>时间: {{time}}</p>
+      <p v-text="'地址:' + address"></p>
+      <template>
+        <p>天气: {{weather}}</p>
+      </template>
+      <!-- 2,html -->
+      <div v-html="htmlStr"></div>
+      <p>
+        <!-- v-on:type 绑定事件 === @: -->
+        <button type="button" v-on:click="isHidden = !isHidden">显示/隐藏</button>
+      </p>
+
+        <!-- v-if 条件渲染 -->
+        <h3 v-if = "!isHidden">黑暗之魂3</h3>
+
+        <!--3,v-bind:src === :src=""-->
+        <!-- <img v-bind:src="imgLink" width="400" :title="imgTitle"> -->
+        <img :class="{'hidden':isHidden}" :src="imgLink" width="400" :title="imgTitle">
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
